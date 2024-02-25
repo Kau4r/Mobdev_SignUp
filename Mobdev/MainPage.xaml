@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobdev.MainPage">
+
+    <ScrollView VerticalOptions="FillAndExpand" Margin="0">
+        <VerticalStackLayout
+            Padding="0,0,0,30"
+            Spacing="25"
+            VerticalOptions="CenterAndExpand">
+            <Grid>
+                <BoxView Color="#423B31" HeightRequest="80" />
+                <Label
+                    Text="Sign Up"
+                    Style="{StaticResource Headline}"
+                    SemanticProperties.HeadingLevel="Level1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" 
+                    TextColor="White"/>
+            </Grid>
+            <Label
+                Text="Barlic Gread Online"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level1" />
+            <Image
+                Source="barlic.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Garlic Bread in its natural habitat" />
+
+            <Entry
+                x:Name="FirstNameEntry"
+                Placeholder="First Name"
+                WidthRequest="400" 
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Input First Name"  />
+
+            <Entry
+                x:Name="LastNameEntry"
+                Placeholder="Last Name"
+                WidthRequest="400" 
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Input Last Name" />
+
+            <Entry
+                x:Name="Username"
+                Placeholder="Username"
+                WidthRequest="400" 
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Input Username" />
+
+
+            <Grid  x:Name="pGrid" HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Entry 
+                    x:Name="PasswordEntry"
+                   Placeholder="Password"
+                   WidthRequest="400"
+                   Style="{StaticResource SubHeadline}"
+                   SemanticProperties.HeadingLevel="Level2"
+                   SemanticProperties.Description="Input Password"
+                   IsPassword="true"
+                   Keyboard="Default"
+                   TextChanged="TestPassword"
+                   Grid.Row="0"
+                   Grid.Column="0" />
+
+                <Label 
+                   x:Name="passval"
+                   IsVisible="False"
+                   Text="Password must include 8 characters, a uppercase, a lowercase, and a number."
+                   FontSize="Micro"
+                   TextColor="Red"
+                   WidthRequest="400"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   HorizontalOptions="Start"
+                   VerticalOptions="End" />
+                
+            </Grid>
+
+            <Entry
+                x:Name="ConfirmPasswordEntry"
+                Placeholder="Confirm Password"
+                WidthRequest="400"  
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Confirm Password"
+                IsPassword="true"
+                Keyboard="Default"/>
+
+
+            <Label x:Name="AlreadyHaveAccountLabel"
+                   HorizontalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Already have an " />
+                        <Span Text="Account?" TextColor="#78AB7A">
+                            <!--
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnAccountTapped" />
+                            </Span.GestureRecognizers>
+                            -->
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+
+            <Button x:Name="SignUpButton" Text="Sign Up"  WidthRequest="400" Clicked="SignUpButtonClicked" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
